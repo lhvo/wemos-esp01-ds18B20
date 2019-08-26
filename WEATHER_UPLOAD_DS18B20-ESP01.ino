@@ -1,46 +1,3 @@
-/*
-  HelloServerSecure - Simple HTTPS server example
-
-  This example demonstrates a basic ESP8266WebServerSecure HTTPS server
-  that can serve "/" and "/inline" and generate detailed 404 (not found)
-  HTTP respoinses.  Be sure to update the SSID and PASSWORD before running
-  to allow connection to your WiFi network.
-
-  IMPORTANT NOTES ABOUT SSL CERTIFICATES
-
-  1. USE/GENERATE YOUR OWN CERTIFICATES
-    While a sample, self-signed certificate is included in this example,
-    it is ABSOLUTELY VITAL that you use your own SSL certificate in any
-    real-world deployment.  Anyone with the certificate and key may be
-    able to decrypt your traffic, so your own keys should be kept in a
-    safe manner, not accessible on any public network.
-
-  2. HOW TO GENERATE YOUR OWN CERTIFICATE/KEY PAIR
-    A sample script, "make-self-signed-cert.sh" is provided in the
-    ESP8266WiFi/examples/WiFiHTTPSServer directory.  This script can be
-    modified (replace "your-name-here" with your Organization name).  Note
-    that this will be a *self-signed certificate* and will *NOT* be accepted
-    by default by most modern browsers.  They'll display something like,
-    "This certificate is from an untrusted source," or "Your connection is
-    not secure," or "Your connection is not private," and the user will
-    have to manully allow the browser to continue by using the
-    "Advanced/Add Exception" (FireFox) or "Advanced/Proceed" (Chrome) link.
-
-    You may also, of course, use a commercial, trusted SSL provider to
-    generate your certificate.  When requesting the certificate, you'll
-    need to specify that it use SHA256 and 1024 or 512 bits in order to
-    function with the axTLS implementation in the ESP8266.
-
-  Interactive usage:
-    Go to https://esp8266-webupdate.local/firmware, enter the username
-    and password, and the select a new BIN to upload.
-
-  To upload through terminal you can use:
-  curl -u admin:admin -F "image=@firmware.bin" esp8266-webupdate.local/firmware
-
-  Adapted by Earle F. Philhower, III, from the HelloServer.ino example.
-  This example is released into the public domain.
-*/
 
 // Include the libraries we need
 #include <OneWire.h>
@@ -61,10 +18,10 @@ DallasTemperature sensors(&oneWire);
 #include <ESP8266mDNS.h>
 #include <ESP8266HTTPClient.h>
 
-const char* ssid = "dd-wrt_vap";
-const char* password = "ff00ff00ff";
+const char* ssid = "SSID";
+const char* password = "PWD";
 const char* sensorName ="esp01-01";
-const char* table="test";
+
 const int duration = 300; /* duration in sec */
 
 float h=0;
